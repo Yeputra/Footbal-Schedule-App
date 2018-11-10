@@ -1,8 +1,10 @@
-package com.freaky.id.footballscheduleapp
+package com.freaky.id.footballscheduleapp.fragment
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import com.freaky.id.footballscheduleapp.fragment.FragmentLast
+import com.freaky.id.footballscheduleapp.fragment.FragmentNext
 
 class TabAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
