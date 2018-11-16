@@ -6,10 +6,13 @@
               android:orientation="vertical"
              tools:context=".fragment.FragmentLast">
 
+
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
             android:id="@+id/match_recycler_last"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+
 
 </LinearLayout>

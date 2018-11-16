@@ -9,7 +9,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+            android:layout_margin="8dp">
 
         <LinearLayout
                 android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
                 android:layout_gravity="center">
 
             <TextView
-                    android:id="@+id/txtTeamName1"
+                    android:id="@+id/txtTeamNameA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name1"
@@ -27,7 +27,7 @@
                     android:maxLength="10"/>
 
             <TextView
-                    android:id="@+id/txtTeamScore1"
+                    android:id="@+id/txtTeamScoreA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -42,6 +42,7 @@
                     android:layout_gravity="center">
 
                 <TextView
+                        android:id="@+id/txtDateMatch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Match Date"
@@ -60,7 +61,7 @@
             </LinearLayout>
 
             <TextView
-                    android:id="@+id/txtTeamScore2"
+                    android:id="@+id/txtTeamScoreB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -69,7 +70,7 @@
                     android:layout_margin="24dp"/>
 
             <TextView
-                    android:id="@+id/txtTeamName2"
+                    android:id="@+id/txtTeamNameB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name2"

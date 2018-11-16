@@ -6,9 +6,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+
         <item name="tabIndicatorColor">@android:color/white</item>
         <item name="tabIndicatorHeight">3dp</item>
         <item name="tabBackground">?attr/selectableItemBackground</item>
