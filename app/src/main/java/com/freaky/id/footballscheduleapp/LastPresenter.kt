@@ -11,6 +11,7 @@ class LastPresenter(private val view: LastView,
                     private val apiRepository: ApiRepository,
                     private val gson: Gson) {
     fun getEventList(id: String?) {
+        view.showLoading()
         doAsync {
             val data = gson.fromJson(apiRepository
                 .doRequest(TheSportDBApi.getEvents(id)),
@@ -18,6 +19,7 @@ class LastPresenter(private val view: LastView,
             )
 
             uiThread {
+                view.hideLoading()
                 view.showEventList(data.events)
             }
         }
