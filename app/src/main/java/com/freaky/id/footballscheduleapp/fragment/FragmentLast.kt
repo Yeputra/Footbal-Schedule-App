@@ -33,7 +33,7 @@ class FragmentLast : Fragment(), LastView {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_last, container, false)
         var match_recycler_last = rootView.findViewById(R.id.match_recycler_last) as RecyclerView
-        match_recycler_last.layoutManager = LinearLayoutManager(activity)
+        match_recycler_last.layoutManager = LinearLayoutManager(context)
         adapterEvent = EventAdapter(events)
         match_recycler_last.adapter = adapterEvent
 

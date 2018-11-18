@@ -7,14 +7,16 @@ import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-class LastPresenter(private val view: LastView,
-                    private val apiRepository: ApiRepository,
-                    private val gson: Gson) {
+class NextPresenter (private val view: NextView,
+                     private val apiRepository: ApiRepository,
+                     private val gson: Gson
+) {
     fun getEventList(id: String?) {
         view.showLoading()
         doAsync {
-            val data = gson.fromJson(apiRepository
-                .doRequest(TheSportDBApi.getEventsLast(id)),
+            val data = gson.fromJson(
+                apiRepository
+                    .doRequest(TheSportDBApi.getEventsNext(id)),
                 Events::class.java
             )
 
@@ -24,4 +26,5 @@ class LastPresenter(private val view: LastView,
             }
         }
     }
+
 }
