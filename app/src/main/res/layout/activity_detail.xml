@@ -41,7 +41,7 @@
                         android:text="Name1"
                         android:textStyle="bold"
                         android:layout_gravity="center"
-                        android:maxLength="10"/>
+                        android:maxLength="15"/>
 
                 <TextView
                         android:id="@+id/txtTeamScoreA"
@@ -93,7 +93,7 @@
                         android:text="Name2"
                         android:textStyle="bold"
                         android:layout_gravity="center"
-                        android:maxLength="10"/>
+                        android:maxLength="15"/>
 
             </LinearLayout>
 
