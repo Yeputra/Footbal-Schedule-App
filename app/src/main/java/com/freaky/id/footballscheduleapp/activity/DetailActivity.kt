@@ -3,7 +3,11 @@ package com.freaky.id.footballscheduleapp.activity
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.CardView
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.API.ApiRepository
 import com.freaky.id.footballscheduleapp.MatchDetailPresenter
@@ -21,6 +25,8 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
     private lateinit var tvdate : TextView
     private lateinit var tvHomeScore : TextView
     private lateinit var tvAwayScore : TextView
+    private lateinit var progressBar : ProgressBar
+    private lateinit var cardScore : CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +34,9 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
 
         matchId = intent.getStringExtra("match")
         initToolbar()
+
+        progressBar = findViewById(R.id.progressBar2)
+        cardScore = findViewById(R.id.cardScore)
 
         tvHome = findViewById(R.id.txtTeamNameA)
         tvAway = findViewById(R.id.txtTeamNameB)
@@ -40,6 +49,16 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         presenter = MatchDetailPresenter(this, request, gson)
 
         presenter.getMatchDetail(matchId)
+    }
+
+    override fun showLoading() {
+        progressBar.visibility = View.VISIBLE
+        cardScore.visibility = View.GONE
+    }
+
+    override fun hideLoading() {
+        progressBar.visibility = View.GONE
+        cardScore.visibility = View.VISIBLE
     }
 
     override fun showMatchDetail(data: EventsItem) {
