@@ -35,7 +35,7 @@ class FragmentNext : Fragment(), NextView {
         val rootView = inflater.inflate(R.layout.fragment_next, container, false)
         var match_recycler_next = rootView.findViewById(R.id.match_recycler_next) as RecyclerView
         match_recycler_next.layoutManager = LinearLayoutManager(context)
-        adapterEvent = EventAdapterNext(events)
+        adapterEvent = EventAdapterNext(this!!.context!!, events)
         match_recycler_next.adapter = adapterEvent
 
         progressBar = rootView.findViewById(R.id.progressBar) as ProgressBar

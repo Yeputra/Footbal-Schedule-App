@@ -1,5 +1,6 @@
 package com.freaky.id.footballscheduleapp.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -33,8 +34,8 @@ class FragmentLast : Fragment(), LastView {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_last, container, false)
         var match_recycler_last = rootView.findViewById(R.id.match_recycler_last) as RecyclerView
-        match_recycler_last.layoutManager = LinearLayoutManager(context)
-        adapterEventLast = EventAdapterLast(context,events)
+        match_recycler_last.layoutManager = LinearLayoutManager(activity)
+        adapterEventLast = EventAdapterLast(this!!.context!!, events)
         match_recycler_last.adapter = adapterEventLast
 
         progressBar = rootView.findViewById(R.id.progressBar) as ProgressBar

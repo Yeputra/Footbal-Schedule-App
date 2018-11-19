@@ -1,5 +1,6 @@
 package com.freaky.id.footballscheduleapp.adapter
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
+import com.freaky.id.footballscheduleapp.activity.DetailActivity
 import com.freaky.id.footballscheduleapp.model.EventsItem
+import org.jetbrains.anko.startActivity
 
-class EventAdapterNext (private val events: List<EventsItem>) : RecyclerView.Adapter<EventAdapterNext.ViewHolder>() {
+class EventAdapterNext (private val context: Context, private val events: List<EventsItem>) : RecyclerView.Adapter<EventAdapterNext.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) :EventAdapterNext.ViewHolder{
         return EventAdapterNext.ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.match_item_next, parent, false))
@@ -19,8 +22,8 @@ class EventAdapterNext (private val events: List<EventsItem>) : RecyclerView.Ada
         holder.bindItem(events[position])
 
         holder.itemView.setOnClickListener {
-            //context.startActivity<DetailActivity>("match" to item)
-            Log.d("Test", "Ini adalah list ke")
+            val item = events[position]
+            context.startActivity<DetailActivity>("match" to item.eventId)
         }
     }
 
