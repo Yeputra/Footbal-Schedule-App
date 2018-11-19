@@ -6,6 +6,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class EventsItem(
+                      @SerializedName("idEvent")
+                      var eventId: String? = null,
                       @SerializedName("intHomeScore")
                       var intHomeScore: String? = null,
                       @SerializedName("dateEvent")

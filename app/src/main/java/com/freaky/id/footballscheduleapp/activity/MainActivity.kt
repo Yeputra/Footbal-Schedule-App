@@ -1,4 +1,4 @@
-package com.freaky.id.footballscheduleapp
+package com.freaky.id.footballscheduleapp.activity
 
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import android.support.v7.widget.Toolbar
+import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.fragment.TabAdapter
 
 class MainActivity : AppCompatActivity() {
