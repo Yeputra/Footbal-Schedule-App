@@ -12,7 +12,8 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
         <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -26,50 +27,77 @@
                 android:id="@+id/cardScore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp">
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="8dp">
 
             <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_gravity="center">
-
-                <TextView
-                        android:id="@+id/txtTeamNameA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name1"
-                        android:textStyle="bold"
-                        android:layout_gravity="center"
-                        android:maxLength="15"/>
-
-                <TextView
-                        android:id="@+id/txtTeamScoreA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="20sp"
-                        android:layout_gravity="center"
-                        android:layout_margin="24dp"/>
+                    android:layout_gravity="center"
+                    android:gravity="center">
 
                 <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_gravity="center">
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/ivHome"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="8dp"
+                            android:layout_gravity="center"/>
+
+                    <TextView
+                            android:id="@+id/txtTeamNameA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name1"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:maxLength="15"
+                            android:layout_marginBottom="8dp"/>
+
+                </LinearLayout>
+
+
+                <TextView
+                        android:id="@+id/txtTeamScoreA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="40sp"
+                        android:layout_gravity="center"
+                        android:layout_margin="12dp"/>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center">
 
                     <TextView
                             android:id="@+id/txtDateMatch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Match Date"
+                            android:layout_gravity="center"
                             android:textSize="12sp"
+                            android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:layout_margin="8dp"/>
 
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="VS"
                             android:textSize="12sp"
                             android:textStyle="bold"
@@ -80,26 +108,143 @@
                 <TextView
                         android:id="@+id/txtTeamScoreB"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="0"
-                        android:textSize="20sp"
+                        android:textSize="40sp"
                         android:layout_gravity="center"
-                        android:layout_margin="24dp"/>
+                        android:layout_margin="12dp"/>
 
-                <TextView
-                        android:id="@+id/txtTeamNameB"
+                <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name2"
-                        android:textStyle="bold"
-                        android:layout_gravity="center"
-                        android:maxLength="15"/>
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/ivAway"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_margin="8dp"
+                            android:layout_gravity="center"/>
+
+                    <TextView
+                            android:id="@+id/txtTeamNameB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name2"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:maxLength="15"
+                            android:layout_marginBottom="8dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+                android:id="@+id/cvGoal"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="165dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tvHomeGoal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:text="Home Goal"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/tvHomeShot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:text="Goals"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Shots"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:layout_marginTop="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="right">
+
+
+                    <TextView
+                            android:id="@+id/tvAwayGoal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:text="Home Goal"
+                            android:gravity="right"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginTop="8dp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/tvAwayShot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="bottom"
+                            android:textStyle="bold"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
+
     <ProgressBar
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"

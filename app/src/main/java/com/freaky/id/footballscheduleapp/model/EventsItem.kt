@@ -17,4 +17,18 @@ data class EventsItem(
                       @SerializedName("strHomeTeam")
                       var strHomeTeam: String? = null,
                       @SerializedName("intAwayScore")
-                      var intAwayScore: String? = null):Parcelable
+                      var intAwayScore: String? = null,
+                      @SerializedName("strHomeGoalDetails")
+                      var strHomeGoalDetail: String? = null,
+                      @SerializedName("strAwayGoalDetails")
+                      var strAwayGoalDetail: String? = null,
+                      @SerializedName("intHomeShots")
+                      var intHomeShots : String? = null,
+                      @SerializedName("intAwayShots")
+                      var intAwayShots : String? = null,
+                      @SerializedName("strTeamBadge")
+                      var strTeamBadge : String? = null,
+                      @SerializedName("idHomeTeam")
+                      var idHomeTeam : String? = null,
+                      @SerializedName("idAwayTeam")
+                      var idAwayTeam : String? = null):Parcelable

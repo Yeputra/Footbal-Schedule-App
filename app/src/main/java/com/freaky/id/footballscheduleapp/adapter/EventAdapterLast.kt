@@ -2,7 +2,6 @@ package com.freaky.id.footballscheduleapp.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +22,9 @@ class EventAdapterLast(private val context:Context, private val events: List<Eve
 
         holder.itemView.setOnClickListener {
             val item = events[position]
-            context.startActivity<DetailActivity>("match" to item.eventId)
+            context.startActivity<DetailActivity>("match" to item.eventId,
+                                                 "homeTeam" to item.idHomeTeam,
+                                                 "awayTeam" to item.idAwayTeam)
         }
     }
 

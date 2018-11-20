@@ -23,7 +23,9 @@ class EventAdapterNext (private val context: Context, private val events: List<E
 
         holder.itemView.setOnClickListener {
             val item = events[position]
-            context.startActivity<DetailActivity>("match" to item.eventId)
+            context.startActivity<DetailActivity>("match" to item.eventId,
+                                                           "homeTeam" to item.idHomeTeam,
+                                                           "awayTeam" to item.idAwayTeam)
         }
     }
 
