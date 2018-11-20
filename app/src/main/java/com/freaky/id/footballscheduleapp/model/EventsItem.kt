@@ -8,14 +8,18 @@ import kotlinx.android.parcel.Parcelize
 data class EventsItem(
                       @SerializedName("idEvent")
                       var eventId: String? = null,
-                      @SerializedName("intHomeScore")
-                      var intHomeScore: String? = null,
                       @SerializedName("dateEvent")
                       var dateEvent: String? = null,
-                      @SerializedName("strAwayTeam")
-                      var strAwayTeam: String? = null,
+                      @SerializedName("idHomeTeam")
+                      var idHomeTeam : String? = null,
                       @SerializedName("strHomeTeam")
                       var strHomeTeam: String? = null,
+                      @SerializedName("idAwayTeam")
+                      var idAwayTeam : String? = null,
+                      @SerializedName("strAwayTeam")
+                      var strAwayTeam: String? = null,
+                      @SerializedName("intHomeScore")
+                      var intHomeScore: String? = null,
                       @SerializedName("intAwayScore")
                       var intAwayScore: String? = null,
                       @SerializedName("strHomeGoalDetails")
@@ -27,8 +31,4 @@ data class EventsItem(
                       @SerializedName("intAwayShots")
                       var intAwayShots : String? = null,
                       @SerializedName("strTeamBadge")
-                      var strTeamBadge : String? = null,
-                      @SerializedName("idHomeTeam")
-                      var idHomeTeam : String? = null,
-                      @SerializedName("idAwayTeam")
-                      var idAwayTeam : String? = null):Parcelable
+                      var strTeamBadge : String? = null):Parcelable
