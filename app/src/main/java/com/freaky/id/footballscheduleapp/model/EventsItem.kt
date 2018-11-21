@@ -15,12 +15,12 @@ data class EventsItem(
                       var idHomeTeam : String? = null,
     @SerializedName("strHomeTeam")
                       var strHomeTeam: String? = null,
+    @SerializedName("intHomeScore")
+                      var intHomeScore: String? = null,
     @SerializedName("idAwayTeam")
                       var idAwayTeam : String? = null,
     @SerializedName("strAwayTeam")
                       var strAwayTeam: String? = null,
-    @SerializedName("intHomeScore")
-                      var intHomeScore: String? = null,
     @SerializedName("intAwayScore")
                       var intAwayScore: String? = null,
     @SerializedName("strHomeGoalDetails")

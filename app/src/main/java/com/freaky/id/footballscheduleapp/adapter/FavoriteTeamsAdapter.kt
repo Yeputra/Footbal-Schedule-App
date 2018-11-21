@@ -33,13 +33,23 @@ class FavoriteTeamsAdapter (private val context: Context, private val favorite: 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvDate : TextView = itemView.find(R.id.txtDateMatch)
-        private val tvTeamA : TextView = itemView.findViewById(R.id.txtTeamNameA)
-        private val tvTeamB : TextView = itemView.findViewById(R.id.txtTeamNameB)
+        private val tvTeamA : TextView = itemView.find(R.id.txtTeamNameA)
+        private val tvScoreA : TextView = itemView.find(R.id.txtTeamScoreA)
+        private val tvTeamB : TextView = itemView.find(R.id.txtTeamNameB)
+        private val tvscoreB : TextView = itemView.find(R.id.txtTeamScoreB)
 
         fun bindItem(favorite: Favorite) {
             tvTeamA.text = favorite.teamHomeName
             tvTeamB.text = favorite.teamAwayName
             tvDate.text = favorite.dateEvent
+            if(favorite.teamHomeScore!=null && favorite.teamAwayScore!=null){
+                tvScoreA.text = favorite.teamHomeScore
+                tvscoreB.text = favorite.teamAwayScore
+            }
+            else {
+                tvScoreA.text = ""
+                tvscoreB.text = ""
+            }
         }
 
     }

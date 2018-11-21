@@ -136,8 +136,10 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
             data.dateEvent,
             data.idHomeTeam,
             data.strHomeTeam,
+            data.intHomeScore,
             data.idAwayTeam,
-            data.strAwayTeam)
+            data.strAwayTeam,
+            data.intAwayScore)
 
         tvHome.text = data.strHomeTeam
         tvAway.text = data.strAwayTeam
@@ -171,8 +173,10 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
                     Favorite.DATE_EVENT to events.dateEvent?.let { DateHelper.formatDateToMatch(it) },
                     Favorite.TEAM_HOME_ID to events.idHomeTeam,
                     Favorite.TEAM_HOME_NAME to events.strHomeTeam,
+                    Favorite.TEAM_HOME_SCORE to events.intHomeScore,
                     Favorite.TEAM_AWAY_ID to events.idAwayTeam,
-                    Favorite.TEAM_AWAY_NAME to events.strAwayTeam)
+                    Favorite.TEAM_AWAY_NAME to events.strAwayTeam,
+                    Favorite.TEAM_AWAY_SCORE to events.intAwayScore)
             }
             longToast("Added to Favorite")
         } catch (e: SQLiteConstraintException){
