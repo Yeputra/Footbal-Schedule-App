@@ -25,6 +25,7 @@ import com.freaky.id.footballscheduleapp.db.Favorite
 import com.freaky.id.footballscheduleapp.db.database
 import com.freaky.id.footballscheduleapp.model.EventsItem
 import com.freaky.id.footballscheduleapp.model.TeamList
+import com.freaky.id.footballscheduleapp.utils.DateHelper
 import org.jetbrains.anko.*
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.delete
@@ -140,7 +141,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
 
         tvHome.text = data.strHomeTeam
         tvAway.text = data.strAwayTeam
-        tvdate.text = data.dateEvent
+        tvdate.text = data.dateEvent?.let { DateHelper.formatDateToMatch(it) }
         tvHomeScore.text = data.intHomeScore
         tvAwayScore.text = data.intAwayScore
         tvHomeGoals.text = data.strHomeGoalDetail
@@ -167,7 +168,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
             database.use {
                 insert(Favorite.TABLE_FAVORITE,
                     Favorite.MATCH_ID to events.eventId,
-                    Favorite.DATE_EVENT to events.dateEvent,
+                    Favorite.DATE_EVENT to events.dateEvent?.let { DateHelper.formatDateToMatch(it) },
                     Favorite.TEAM_HOME_ID to events.idHomeTeam,
                     Favorite.TEAM_HOME_NAME to events.strHomeTeam,
                     Favorite.TEAM_AWAY_ID to events.idAwayTeam,

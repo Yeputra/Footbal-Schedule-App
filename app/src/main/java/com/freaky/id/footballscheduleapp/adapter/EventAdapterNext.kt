@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.activity.DetailActivity
 import com.freaky.id.footballscheduleapp.model.EventsItem
+import com.freaky.id.footballscheduleapp.utils.DateHelper
 import org.jetbrains.anko.startActivity
 
 class EventAdapterNext (private val context: Context, private val events: List<EventsItem>) : RecyclerView.Adapter<EventAdapterNext.ViewHolder>() {
@@ -39,7 +40,7 @@ class EventAdapterNext (private val context: Context, private val events: List<E
         fun bindItem(events: EventsItem) {
             tvTeamA.text = events.strHomeTeam
             tvTeamB.text = events.strAwayTeam
-            tvDate.text = events.dateEvent
+            tvDate.text = events.dateEvent?.let { DateHelper.formatDateToMatch(it) }
         }
 
     }
