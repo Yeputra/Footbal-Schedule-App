@@ -15,6 +15,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:elevation="8dp"
+            app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="4dp">
 
         <LinearLayout
@@ -33,7 +34,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Name1"
+                        android:textColor="@android:color/white"
                         android:textSize="14sp"
+                        android:layout_marginRight="12dp"
                         android:textStyle="bold"
                         android:layout_gravity="center"
                         android:textAlignment="center"
@@ -47,6 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
+                    android:textColor="@android:color/white"
                     android:textSize="20sp"
                     android:layout_gravity="center"/>
 
@@ -62,6 +66,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Match Date"
+                        android:textStyle="bold"
                         android:textSize="12sp"
                         android:textColor="@color/colorAccent"
                         android:layout_margin="8dp"
@@ -71,7 +76,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="VS"
-                        android:textSize="12sp"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"
                         android:layout_gravity="center"/>
@@ -83,6 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
+                    android:textColor="@android:color/white"
                     android:textSize="20sp"
                     android:textAlignment="center"
                     android:layout_gravity="center"/>
@@ -98,6 +105,8 @@
                         android:layout_height="wrap_content"
                         android:text="Name1"
                         android:textSize="14sp"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@android:color/white"
                         android:textStyle="bold"
                         android:layout_gravity="center"
                         android:textAlignment="center"
