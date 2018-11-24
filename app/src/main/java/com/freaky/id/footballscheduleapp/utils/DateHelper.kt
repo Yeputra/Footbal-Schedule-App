@@ -5,6 +5,6 @@ import java.util.*
 
 object DateHelper {
     fun formatDateToMatch(date: Date): String {
-        return SimpleDateFormat("EEEE, dd MMMM yyyy", Locale.getDefault()).format(date)
+        return SimpleDateFormat("EEE, dd MMM yyy", Locale.getDefault()).format(date)
     }
 }

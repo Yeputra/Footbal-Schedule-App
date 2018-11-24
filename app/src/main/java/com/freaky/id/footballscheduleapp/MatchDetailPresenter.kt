@@ -10,8 +10,7 @@ import org.jetbrains.anko.uiThread
 
 class MatchDetailPresenter(private val view: MatchDetailView,
                            private val apiRepository: ApiRepository,
-                           private val gson: Gson
-) {
+                           private val gson: Gson) {
     fun getMatchDetail(id: String?) {
         view.showLoading()
         doAsync {
