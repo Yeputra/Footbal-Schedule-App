@@ -4,6 +4,8 @@ import android.database.sqlite.SQLiteConstraintException
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.CoordinatorLayout
+import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.CardView
 import android.support.v7.widget.Toolbar
@@ -11,6 +13,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.API.ApiRepository
@@ -33,10 +36,12 @@ import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
+import org.jetbrains.anko.design.snackbar
 
 class DetailActivity : AppCompatActivity(), MatchDetailView {
 
     private lateinit var presenter: MatchDetailPresenter
+    private lateinit var coordinatorLayout: CoordinatorLayout
     private lateinit var matchId : String
     private lateinit var homeId : String
     private lateinit var awayId : String
@@ -62,14 +67,16 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        matchId = intent.getStringExtra("match")
-        homeId = intent.getStringExtra("homeTeam")
-        awayId = intent.getStringExtra("awayTeam")
+        matchId = "576595"
+        homeId = "133623"
+        awayId = "134777"
         initToolbar()
 
         progressBar = findViewById(R.id.progressBar2)
         cardScore = findViewById(R.id.cardScore)
         cardGoal = findViewById(R.id.cvGoal)
+
+        coordinatorLayout = find(R.id.main_content)
 
         tvHome = findViewById(R.id.txtTeamNameA)
         tvAway = findViewById(R.id.txtTeamNameB)
@@ -150,7 +157,6 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         tvAwayGoals.text = data.strAwayGoalDetail
         tvHomeShots.text = data.intHomeShots
         tvAwayShots.text = data.intAwayShots
-
     }
 
     override fun showDetailTeam(data: TeamList, isHomeTeam : Boolean){
@@ -178,7 +184,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
                     Favorite.TEAM_AWAY_NAME to events.strAwayTeam,
                     Favorite.TEAM_AWAY_SCORE to events.intAwayScore)
             }
-            longToast("Added to Favorite")
+            coordinatorLayout.snackbar("Added to Favorite").show()
         } catch (e: SQLiteConstraintException){
             longToast(e.localizedMessage)
         }
@@ -190,7 +196,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
                 delete(Favorite.TABLE_FAVORITE, "(TEAM_HOME_ID = {id})",
                     "id" to homeId)
             }
-            longToast("Removed From Favorite")
+            coordinatorLayout.snackbar("Removed to Favorite").show()
         } catch (e: SQLiteConstraintException){
             longToast(e.localizedMessage)
         }

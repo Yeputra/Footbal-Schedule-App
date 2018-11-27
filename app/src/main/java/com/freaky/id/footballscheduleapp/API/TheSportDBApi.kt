@@ -5,7 +5,7 @@ import com.freaky.id.footballscheduleapp.BuildConfig
 
 object TheSportDBApi {
     fun getEventsLast(id: String?): String {
-        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+        /*return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")
             .appendPath("json")
@@ -13,7 +13,8 @@ object TheSportDBApi {
             .appendPath("eventspastleague.php")
             .appendQueryParameter("id", id)
             .build()
-            .toString()
+            .toString()*/
+        return BuildConfig.BASE_URL + "api/v1/json/${BuildConfig.TSDB_API_KEY}" + "/eventspastleague.php?id=" + id
     }
 
     fun getEventsNext(id: String?): String {
@@ -51,4 +52,6 @@ object TheSportDBApi {
             .build()
             .toString()
     }
+
+
 }
