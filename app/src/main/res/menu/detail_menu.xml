@@ -7,4 +7,5 @@
             android:title="@string/favorites"
             android:iconifiedByDefault="false"
             app:showAsAction="ifRoom" />
+
 </menu>

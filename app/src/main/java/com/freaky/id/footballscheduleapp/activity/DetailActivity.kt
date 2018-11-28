@@ -57,6 +57,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
     private lateinit var progressBar : ProgressBar
     private lateinit var cardScore : CardView
     private lateinit var cardGoal : CardView
+    private lateinit var cardShot : CardView
     private lateinit var ivHome : ImageView
     private lateinit var ivAway : ImageView
     private lateinit var events : EventsItem
@@ -67,14 +68,15 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        matchId = "576595"
-        homeId = "133623"
-        awayId = "134777"
+        matchId = intent.getStringExtra("match")
+        homeId = intent.getStringExtra("homeTeam")
+        awayId = intent.getStringExtra("awayTeam")
         initToolbar()
 
         progressBar = findViewById(R.id.progressBar2)
         cardScore = findViewById(R.id.cardScore)
         cardGoal = findViewById(R.id.cvGoal)
+        cardShot = findViewById(R.id.cvShots)
 
         coordinatorLayout = find(R.id.main_content)
 
@@ -129,12 +131,14 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         progressBar.visibility = View.VISIBLE
         cardScore.visibility = View.GONE
         cardGoal.visibility = View.GONE
+        cardShot.visibility = View.GONE
     }
 
     override fun hideLoading() {
         progressBar.visibility = View.GONE
         cardScore.visibility = View.VISIBLE
         cardGoal.visibility = View.VISIBLE
+        cardShot.visibility = View.VISIBLE
     }
 
     override fun showMatchDetail(data: EventsItem) {
