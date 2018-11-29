@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
+import android.view.View
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.fragment.FragmentMatches
 import com.freaky.id.footballscheduleapp.fragment.TeamsFragment
@@ -15,9 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         initToolbar()
-
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.event -> {
@@ -54,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "Football Schedule App"
-        toolbar.setTitleTextColor(Color.WHITE)
+        val color = resources.getColor(R.color.colorCard)
+        toolbar.setTitleTextColor(color)
     }
 }
