@@ -8,6 +8,14 @@
 
 
     <!-- TODO: Update blank fragment layout -->
+    <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/colorCard"></Spinner>
+
     <android.support.v7.widget.RecyclerView
             android:id="@+id/match_recycler_last"
             android:layout_width="match_parent"

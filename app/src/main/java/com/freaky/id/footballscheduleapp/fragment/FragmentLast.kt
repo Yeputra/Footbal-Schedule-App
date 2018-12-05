@@ -8,7 +8,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ProgressBar
+import android.widget.Spinner
 import com.freaky.id.footballscheduleapp.API.ApiRepository
 import com.freaky.id.footballscheduleapp.LastPresenter
 import com.freaky.id.footballscheduleapp.LastView
@@ -23,7 +26,9 @@ class FragmentLast : Fragment(), LastView {
         private var events: MutableList<EventsItem> = mutableListOf()
         private lateinit var presenter: LastPresenter
         private lateinit var adapterEventLast: EventAdapterLast
-        private val idEvent : String = "4328"
+        private lateinit var idEvent : String
+        private lateinit var idLeague : String
+        private lateinit var spinner: Spinner
         private lateinit var progressBar : ProgressBar
 
         fun newInstance(): FragmentLast =
@@ -37,14 +42,53 @@ class FragmentLast : Fragment(), LastView {
         match_recycler_last.layoutManager = LinearLayoutManager(activity)
         adapterEventLast = EventAdapterLast(this!!.context!!, events)
         match_recycler_last.adapter = adapterEventLast
-
+        spinner = rootView.findViewById(R.id.spinner)
         progressBar = rootView.findViewById(R.id.progressBar) as ProgressBar
 
         val request = ApiRepository()
         val gson = Gson()
         presenter = LastPresenter(this, request, gson)
 
-        presenter.getEventList(idEvent)
+        val spinnerItems = resources.getStringArray(R.array.league)
+        val spinnerAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, spinnerItems)
+        spinner.adapter = spinnerAdapter
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                idEvent = spinner.selectedItem.toString()
+                if(idEvent == "English Premier League"){
+                    idLeague = "4328"
+                }
+                else if(idEvent == "English League Championship"){
+                    idLeague = "4329"
+                }
+                else if(idEvent == "German Bundesliga"){
+                    idLeague ="4331"
+                }
+                else if(idEvent == "Italian Serie A"){
+                    idLeague = "4332"
+                }
+                else if(idEvent == "French Ligue 1"){
+                    idLeague = "4334"
+                }
+                else if(idEvent == "Spanish La Liga"){
+                    idLeague = "4335"
+                }
+                else {
+                    idLeague = "4328"
+                }
+                presenter.getEventList(idLeague)
+            }
+
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+
+        }
+
+
+
         return rootView
     }
     

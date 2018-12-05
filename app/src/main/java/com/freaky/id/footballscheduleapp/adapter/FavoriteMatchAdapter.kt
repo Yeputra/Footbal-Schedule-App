@@ -12,10 +12,10 @@ import com.freaky.id.footballscheduleapp.db.Favorite
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
 
-class FavoriteTeamsAdapter (private val context: Context, private val favorite: List<Favorite>) : RecyclerView.Adapter<FavoriteTeamsAdapter.ViewHolder>() {
+class FavoriteMatchAdapter (private val context: Context, private val favorite: List<Favorite>) : RecyclerView.Adapter<FavoriteMatchAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) :FavoriteTeamsAdapter.ViewHolder{
-        return FavoriteTeamsAdapter.ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.match_item_favorite, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) :FavoriteMatchAdapter.ViewHolder{
+        return FavoriteMatchAdapter.ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.match_item_favorite, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

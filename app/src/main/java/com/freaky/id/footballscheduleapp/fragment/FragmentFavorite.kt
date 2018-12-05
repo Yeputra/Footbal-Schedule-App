@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.freaky.id.footballscheduleapp.R
-import com.freaky.id.footballscheduleapp.adapter.FavoriteTeamsAdapter
+import com.freaky.id.footballscheduleapp.adapter.FavoriteMatchAdapter
 import com.freaky.id.footballscheduleapp.db.Favorite
 import com.freaky.id.footballscheduleapp.db.database
 import org.jetbrains.anko.db.classParser
@@ -21,7 +21,7 @@ class FragmentFavorite : Fragment() {
     companion object {
 
         private var favorites: MutableList<Favorite> = mutableListOf()
-        private lateinit var adapterFavorite: FavoriteTeamsAdapter
+        private lateinit var adapterFavorite: FavoriteMatchAdapter
         fun newInstance(): FragmentFavorite =
             FragmentFavorite()
     }
@@ -30,7 +30,7 @@ class FragmentFavorite : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_favorite, container, false)
         var recyclerFavorite = rootView.findViewById(R.id.match_recycler_favorite) as RecyclerView
         recyclerFavorite.layoutManager = LinearLayoutManager(activity)
-        adapterFavorite = FavoriteTeamsAdapter(this!!.context!!, favorites)
+        adapterFavorite = FavoriteMatchAdapter(this!!.context!!, favorites)
         recyclerFavorite.adapter = adapterFavorite
         showFavorite()
 
