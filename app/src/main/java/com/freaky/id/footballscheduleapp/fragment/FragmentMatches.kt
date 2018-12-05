@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.support.v7.widget.SearchView
 import android.view.*
+import android.widget.EditText
+import android.widget.ImageView
 
 import com.freaky.id.footballscheduleapp.R
 
@@ -60,7 +62,19 @@ class FragmentMatches : Fragment() {
 
         val searchView = menu?.findItem(R.id.searchMenu)?.actionView as SearchView?
 
+        val imageBack = searchView?.findViewById<ImageView>(android.support.v7.appcompat.R.id.search_close_btn)
+        if (imageBack != null) {
+            imageBack.setImageResource(R.drawable.ic_arrow_back_black_24dp)
+        }
+
+
         searchView?.queryHint = "Search matches"
+
+        val hint = searchView?.findViewById<EditText>(android.support.v7.appcompat.R.id.search_src_text)
+        if (hint != null) {
+            hint.setHintTextColor(Color.GRAY)
+        }
+
 
         searchView?.setOnQueryTextListener(object : android.support.v7.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {

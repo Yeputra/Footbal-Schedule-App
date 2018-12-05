@@ -6,7 +6,7 @@
             android:id="@+id/event"
             android:enabled="true"
             android:icon="@drawable/ic_event"
-            android:title="Events"
+            android:title="Match"
             app:showAsAction="ifRoom" />
 
     <item

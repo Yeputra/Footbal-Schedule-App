@@ -10,7 +10,8 @@
     <android.support.v7.widget.RecyclerView
             android:id="@+id/match_recycler_next"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"/>
 
     <ProgressBar
             style="?android:attr/progressBarStyle"

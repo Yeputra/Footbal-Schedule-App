@@ -172,7 +172,8 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "Football Schedule App"
-        toolbar.setTitleTextColor(Color.WHITE)
+        val color = resources.getColor(R.color.colorCard)
+        toolbar.setTitleTextColor(color)
     }
 
     private fun addToFavorite(){

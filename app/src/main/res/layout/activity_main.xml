@@ -26,6 +26,7 @@
                 android:background="?attr/colorPrimary"
                 app:contentInsetStartWithNavigation="0dp"
                 app:layout_scrollFlags="scroll|enterAlways"
+                app:collapseIcon="@drawable/ic_arrow_back_black_24dp"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     </android.support.design.widget.AppBarLayout>
