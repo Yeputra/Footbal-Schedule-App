@@ -10,5 +10,8 @@ data class TeamList (
     var teamName: String? = null,
 
     @SerializedName("strTeamBadge")
-    var teamBadge: String? = null
+    var teamBadge: String? = null,
+
+    @SerializedName("strDescriptionEN")
+    var teamDes: String? = null
 )

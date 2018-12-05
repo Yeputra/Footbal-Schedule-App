@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
+import com.freaky.id.footballscheduleapp.activity.TeamDetailActivity
 import com.freaky.id.footballscheduleapp.model.TeamList
 import com.squareup.picasso.Picasso
+import org.jetbrains.anko.startActivity
 
 class TeamAdapter (private val context: Context, private val teams: List<TeamList>) : RecyclerView.Adapter<TeamAdapter.ViewHolder>() {
 
@@ -22,9 +24,7 @@ class TeamAdapter (private val context: Context, private val teams: List<TeamLis
 
         holder.itemView.setOnClickListener {
             val item = teams[position]
-            /*context.startActivity<DetailActivity>("match" to item.eventId,
-                "homeTeam" to item.idHomeTeam,
-                "awayTeam" to item.idAwayTeam)*/
+            context.startActivity<TeamDetailActivity>("team" to item.teamId)
         }
     }
 
