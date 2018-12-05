@@ -16,6 +16,11 @@
             android:layout_margin="8dp"
             android:backgroundTint="@color/colorCard"></Spinner>
 
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
     <android.support.v7.widget.RecyclerView
             android:id="@+id/match_recycler_last"
             android:layout_width="match_parent"
@@ -30,5 +35,6 @@
             android:layout_marginTop="28dp"
             android:layout_gravity="center"/>
 
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>
