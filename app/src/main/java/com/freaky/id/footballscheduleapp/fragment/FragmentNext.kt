@@ -13,7 +13,6 @@ import android.widget.ArrayAdapter
 import android.widget.ProgressBar
 import android.widget.Spinner
 import com.freaky.id.footballscheduleapp.API.ApiRepository
-import com.freaky.id.footballscheduleapp.LastPresenter
 import com.freaky.id.footballscheduleapp.NextPresenter
 import com.freaky.id.footballscheduleapp.NextView
 import com.freaky.id.footballscheduleapp.R
@@ -59,7 +58,7 @@ class FragmentNext : Fragment(), NextView {
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 idEvent = spinner.selectedItem.toString()
                 if(idEvent == "English Premier League"){
                     idLeague = "4328"

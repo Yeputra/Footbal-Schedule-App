@@ -25,9 +25,9 @@ class TeamsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tabLayout: TabLayout = view.findViewById(R.id.tab_layout)
+        val tabLayout: TabLayout = view.findViewById(R.id.tab_layout1)
 
-        val viewPager: ViewPager = view.findViewById(R.id.view_pager)
+        val viewPager: ViewPager = view.findViewById(R.id.view_pager1)
 
         val adapter = TabTeamAdapter(childFragmentManager)
 

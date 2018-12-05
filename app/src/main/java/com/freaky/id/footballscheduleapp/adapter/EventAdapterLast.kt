@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.activity.DetailActivity
+import com.freaky.id.footballscheduleapp.fragment.FragmentLast
 import com.freaky.id.footballscheduleapp.model.EventsItem
 import com.freaky.id.footballscheduleapp.utils.DateHelper
 import org.jetbrains.anko.startActivity
 
-class EventAdapterLast(private val context:Context, private val events: List<EventsItem>) : RecyclerView.Adapter<EventAdapterLast.ViewHolder>() {
+class EventAdapterLast(private val context: Context, private val events: List<EventsItem>) : RecyclerView.Adapter<EventAdapterLast.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) :EventAdapterLast.ViewHolder{
         return EventAdapterLast.ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.match_item_last, parent, false))

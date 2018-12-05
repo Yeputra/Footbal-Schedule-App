@@ -2,7 +2,7 @@ package com.freaky.id.footballscheduleapp
 
 import com.freaky.id.footballscheduleapp.API.ApiRepository
 import com.freaky.id.footballscheduleapp.API.TheSportDBApi
-import com.freaky.id.footballscheduleapp.model.Events
+import com.freaky.id.footballscheduleapp.model.Player
 import com.freaky.id.footballscheduleapp.model.Team
 import com.google.gson.Gson
 import kotlinx.coroutines.GlobalScope
@@ -22,6 +22,19 @@ private val context: CoroutineContextProvider = CoroutineContextProvider()) {
             )
             view.hideLoading()
             view.showDetailTeam(data.teams.get(0))
+
+        }
+    }
+
+    fun getPlayerList(teamId: String) {
+        view.showLoading()
+        GlobalScope.launch (context.main){
+            val data = gson.fromJson(apiRepository
+                .doRequest(TheSportDBApi.getPlayerList(teamId)).await(),
+                Player::class.java
+            )
+            view.hideLoading()
+            view.showPlayerList(data.player)
 
         }
     }

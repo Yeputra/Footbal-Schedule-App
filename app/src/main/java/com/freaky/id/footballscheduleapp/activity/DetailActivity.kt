@@ -27,6 +27,7 @@ import com.freaky.id.footballscheduleapp.R.menu.detail_menu
 import com.freaky.id.footballscheduleapp.db.Favorite
 import com.freaky.id.footballscheduleapp.db.database
 import com.freaky.id.footballscheduleapp.model.EventsItem
+import com.freaky.id.footballscheduleapp.model.PlayerItem
 import com.freaky.id.footballscheduleapp.model.TeamList
 import com.freaky.id.footballscheduleapp.utils.DateHelper
 import org.jetbrains.anko.*
@@ -167,6 +168,8 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         Picasso.get().load(data.teamBadge).into(if(isHomeTeam) ivHome else ivAway)
 
     }
+
+
 
     private fun initToolbar() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
