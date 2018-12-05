@@ -59,7 +59,7 @@ class FragmentAllTeam  : Fragment(), TeamView {
 
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 leagueName = spinner.selectedItem.toString()
                 presenter.getTeamList(leagueName)
             }

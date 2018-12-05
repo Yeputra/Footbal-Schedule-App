@@ -11,15 +11,13 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.API.ApiRepository
-import com.freaky.id.footballscheduleapp.MatchDetailPresenter
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.R.id.*
 import com.freaky.id.footballscheduleapp.TeamDetailPresenter
 import com.freaky.id.footballscheduleapp.TeamDetailView
 import com.freaky.id.footballscheduleapp.adapter.PlayerAdapter
-import com.freaky.id.footballscheduleapp.adapter.TeamAdapter
-import com.freaky.id.footballscheduleapp.fragment.FragmentAllTeam
 import com.freaky.id.footballscheduleapp.model.PlayerItem
+import com.freaky.id.footballscheduleapp.model.PlayersDetailItem
 import com.freaky.id.footballscheduleapp.model.TeamList
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso

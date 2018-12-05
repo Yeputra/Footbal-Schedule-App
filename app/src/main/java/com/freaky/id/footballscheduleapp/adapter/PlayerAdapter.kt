@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
+import com.freaky.id.footballscheduleapp.activity.PlayerDetailActivity
 import com.freaky.id.footballscheduleapp.model.PlayerItem
+import com.freaky.id.footballscheduleapp.model.PlayersDetailItem
 import com.squareup.picasso.Picasso
+import org.jetbrains.anko.startActivity
 
 class PlayerAdapter (private val context: Context, private val player: List<PlayerItem>) : RecyclerView.Adapter<PlayerAdapter.ViewHolder>() {
 
@@ -22,7 +25,7 @@ class PlayerAdapter (private val context: Context, private val player: List<Play
 
         holder.itemView.setOnClickListener {
             val item = player[position]
-            /*context.startActivity<TeamDetailActivity>("team" to item.teamId)*/
+            context.startActivity<PlayerDetailActivity>("player" to item.idPlayer)
         }
     }
 
