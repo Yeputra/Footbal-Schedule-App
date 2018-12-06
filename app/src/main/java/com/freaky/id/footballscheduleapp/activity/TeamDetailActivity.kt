@@ -12,9 +12,7 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
 import com.freaky.id.footballscheduleapp.API.ApiRepository
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.R.id.*
@@ -27,7 +25,6 @@ import com.freaky.id.footballscheduleapp.db.database
 import com.freaky.id.footballscheduleapp.model.PlayerItem
 import com.freaky.id.footballscheduleapp.model.PlayersDetailItem
 import com.freaky.id.footballscheduleapp.model.TeamList
-import com.freaky.id.footballscheduleapp.utils.DateHelper
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.db.classParser
@@ -41,7 +38,7 @@ import org.jetbrains.anko.longToast
 class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
     private var player: MutableList<PlayerItem> = mutableListOf()
     private lateinit var presenter: TeamDetailPresenter
-    private lateinit var coordinatorLayout: CoordinatorLayout
+    private lateinit var scrollView: ScrollView
     private lateinit var teamID: String
     private lateinit var ivTeam: ImageView
     private lateinit var tvTeam: TextView
@@ -69,7 +66,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
         rvPlayer.adapter = playerAdapter
         rvPlayer.layoutManager = LinearLayoutManager(this)
 
-        coordinatorLayout = find(R.id.main_content)
+        scrollView = find(main_container)
 
         ivTeam = find(iv_team)
         tvTeam = find(tv_team)
@@ -132,7 +129,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
 
         teams = TeamList(data.teamId,
                         data.teamName,
-                        data.teamName)
+                        data.teamBadge)
 
         tvTeam.text = data.teamName
         Picasso.get().load(data.teamBadge).into(ivTeam)
@@ -149,7 +146,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
     private fun initToolbar() {
         val toolbar: Toolbar = find(toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar!!.title = "Football Schedule App"
+        supportActionBar!!.title = "Team Detail"
         val color = resources.getColor(R.color.colorCard)
         toolbar.setTitleTextColor(color)
     }
@@ -163,7 +160,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
                     FavoriteTeams.TEAM_NAME to teams.teamName,
                     FavoriteTeams.TEAM_BANNER to teams.teamBadge)
             }
-            coordinatorLayout.snackbar("Team Added to Favorite").show()
+            scrollView.snackbar("Team Added to Favorite").show()
         } catch (e: SQLiteConstraintException){
             longToast(e.localizedMessage)
         }
@@ -175,7 +172,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
                 delete(FavoriteTeams.TABLE_FAVORITE, "(TEAM_ID = {id})",
                     "id" to teamID)
             }
-            coordinatorLayout.snackbar("Teams Removed to Favorite").show()
+            scrollView.snackbar("Teams Removed to Favorite").show()
         } catch (e: SQLiteConstraintException){
             longToast(e.localizedMessage)
         }
@@ -193,7 +190,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
             val result = select(FavoriteTeams.TABLE_FAVORITE)
                 .whereArgs("(TEAM_ID = {id})",
                     "id" to teamID)
-            val favorite = result.parseList(classParser<Favorite>())
+            val favorite = result.parseList(classParser<FavoriteTeams>())
             if (!favorite.isEmpty()) isFavorite = true
         }
     }

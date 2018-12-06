@@ -1,5 +1,6 @@
 package com.freaky.id.footballscheduleapp.fragment
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.TabLayout
@@ -11,6 +12,9 @@ import android.widget.EditText
 import android.widget.ImageView
 
 import com.freaky.id.footballscheduleapp.R
+import com.freaky.id.footballscheduleapp.activity.SearchMatchActivity
+import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.support.v4.startActivity
 
 class FragmentMatches : Fragment() {
 
@@ -62,10 +66,6 @@ class FragmentMatches : Fragment() {
 
         val searchView = menu?.findItem(R.id.searchMenu)?.actionView as SearchView?
 
-        val imageBack = searchView?.findViewById<ImageView>(android.support.v7.appcompat.R.id.search_close_btn)
-        if (imageBack != null) {
-            imageBack.setImageResource(R.drawable.ic_arrow_back_black_24dp)
-        }
 
 
         searchView?.queryHint = "Search matches"
@@ -78,6 +78,9 @@ class FragmentMatches : Fragment() {
 
         searchView?.setOnQueryTextListener(object : android.support.v7.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
+                val intent = Intent(context, SearchMatchActivity::class.java)
+                intent.putExtra("query", query)
+                startActivity(intent)
                 return false
             }
 
@@ -89,7 +92,21 @@ class FragmentMatches : Fragment() {
 
 
     }
+/*
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                true
+            }
+            R.id.searchMenu -> {
+                val intent = Intent(context, SearchMatchActivity::class.java)
+                startActivity(intent)
+                true
+            }
 
+            else -> super.onOptionsItemSelected(item)
+        }
 
+    }*/
 
 }
