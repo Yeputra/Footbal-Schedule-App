@@ -16,6 +16,10 @@
             app:contentInsetStartWithNavigation="0dp"
             app:layout_scrollFlags="scroll|enterAlways"/>
 
+    <View android:layout_width="match_parent"
+          android:layout_height="5dp"
+          android:background="@drawable/toolbar_shadow"/>
+
     <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_search_match"
             android:layout_width="match_parent"

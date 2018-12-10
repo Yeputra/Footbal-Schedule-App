@@ -8,11 +8,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.activity.DetailActivity
-import com.freaky.id.footballscheduleapp.fragment.FragmentNext
 import com.freaky.id.footballscheduleapp.model.EventsItem
 import com.freaky.id.footballscheduleapp.utils.DateHelper
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.support.v4.startActivity
 
 class EventAdapterNext (private val context: Context, private val events: List<EventsItem>) : RecyclerView.Adapter<EventAdapterNext.ViewHolder>() {
 

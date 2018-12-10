@@ -67,6 +67,8 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerView {
     private fun initToolbar() {
         val toolbar: Toolbar = find(R.id.toolbar)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Player Detail"
         val color = resources.getColor(R.color.colorCard)
         toolbar.setTitleTextColor(color)

@@ -3,7 +3,6 @@ package com.freaky.id.footballscheduleapp.activity
 import android.database.sqlite.SQLiteConstraintException
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.CoordinatorLayout
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.CardView
 import android.support.v7.widget.LinearLayoutManager
@@ -19,11 +18,9 @@ import com.freaky.id.footballscheduleapp.R.id.*
 import com.freaky.id.footballscheduleapp.TeamDetailPresenter
 import com.freaky.id.footballscheduleapp.TeamDetailView
 import com.freaky.id.footballscheduleapp.adapter.PlayerAdapter
-import com.freaky.id.footballscheduleapp.db.Favorite
 import com.freaky.id.footballscheduleapp.db.FavoriteTeams
 import com.freaky.id.footballscheduleapp.db.database
 import com.freaky.id.footballscheduleapp.model.PlayerItem
-import com.freaky.id.footballscheduleapp.model.PlayersDetailItem
 import com.freaky.id.footballscheduleapp.model.TeamList
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
@@ -146,6 +143,8 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
     private fun initToolbar() {
         val toolbar: Toolbar = find(toolbar)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Team Detail"
         val color = resources.getColor(R.color.colorCard)
         toolbar.setTitleTextColor(color)

@@ -9,9 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.freaky.id.footballscheduleapp.R
-import com.freaky.id.footballscheduleapp.adapter.FavoriteMatchAdapter
 import com.freaky.id.footballscheduleapp.adapter.FavoriteTeamsAdapter
-import com.freaky.id.footballscheduleapp.db.Favorite
 import com.freaky.id.footballscheduleapp.db.FavoriteTeams
 import com.freaky.id.footballscheduleapp.db.database
 import org.jetbrains.anko.db.classParser

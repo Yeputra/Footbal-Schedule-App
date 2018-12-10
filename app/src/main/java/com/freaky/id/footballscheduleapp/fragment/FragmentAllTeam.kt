@@ -1,6 +1,5 @@
 package com.freaky.id.footballscheduleapp.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
@@ -21,7 +20,6 @@ import com.freaky.id.footballscheduleapp.R.array.league
 import com.freaky.id.footballscheduleapp.adapter.TeamAdapter
 import com.freaky.id.footballscheduleapp.model.TeamList
 import com.google.gson.Gson
-import org.jetbrains.anko.find
 
 class FragmentAllTeam  : Fragment(), TeamView {
 

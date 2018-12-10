@@ -12,15 +12,11 @@ import android.view.View
 import android.widget.EditText
 import com.freaky.id.footballscheduleapp.API.ApiRepository
 import com.freaky.id.footballscheduleapp.R
-import com.freaky.id.footballscheduleapp.SearchMatchPresenter
 import com.freaky.id.footballscheduleapp.SearchTeamPresenter
 import com.freaky.id.footballscheduleapp.SearchTeamView
-import com.freaky.id.footballscheduleapp.adapter.SearchMatchAdapter
 import com.freaky.id.footballscheduleapp.adapter.SearchTeamAdapter
-import com.freaky.id.footballscheduleapp.model.EventItem
 import com.freaky.id.footballscheduleapp.model.TeamsItem
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_search_match.*
 import kotlinx.android.synthetic.main.activity_search_team.*
 import org.jetbrains.anko.find
 
@@ -97,6 +93,8 @@ class SearchTeamActivity : AppCompatActivity(), SearchTeamView {
     private fun initToolbar() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Search Team"
         val color = resources.getColor(R.color.colorCard)
         toolbar.setTitleTextColor(color)

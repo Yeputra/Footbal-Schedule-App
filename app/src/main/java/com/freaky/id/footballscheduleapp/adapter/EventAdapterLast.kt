@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.activity.DetailActivity
-import com.freaky.id.footballscheduleapp.fragment.FragmentLast
 import com.freaky.id.footballscheduleapp.model.EventsItem
 import com.freaky.id.footballscheduleapp.utils.DateHelper
 import org.jetbrains.anko.startActivity

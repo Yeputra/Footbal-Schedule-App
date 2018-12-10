@@ -9,10 +9,7 @@ import android.support.v4.view.ViewPager
 import android.support.v7.widget.SearchView
 import android.view.*
 import android.widget.EditText
-import android.widget.ImageView
-
 import com.freaky.id.footballscheduleapp.R
-import com.freaky.id.footballscheduleapp.activity.SearchMatchActivity
 import com.freaky.id.footballscheduleapp.activity.SearchTeamActivity
 
 class TeamsFragment : Fragment() {

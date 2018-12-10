@@ -10,7 +10,6 @@ import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.activity.PlayerDetailActivity
 import com.freaky.id.footballscheduleapp.model.PlayerItem
-import com.freaky.id.footballscheduleapp.model.PlayersDetailItem
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.startActivity
 

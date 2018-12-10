@@ -165,11 +165,11 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
 
     }
 
-
-
     private fun initToolbar() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Event detail"
         val color = resources.getColor(R.color.colorCard)
         toolbar.setTitleTextColor(color)
@@ -220,6 +220,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
                     "id" to homeId)
             val favorite = result.parseList(classParser<Favorite>())
             if (!favorite.isEmpty()) isFavorite = true
+
         }
     }
 

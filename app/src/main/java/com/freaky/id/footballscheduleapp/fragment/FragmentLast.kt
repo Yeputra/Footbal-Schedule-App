@@ -47,12 +47,12 @@ class FragmentLast : Fragment(), LastView {
 
         val spinnerItems = resources.getStringArray(R.array.league)
         val spinnerAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, spinnerItems)
-        spinner.adapter = spinnerAdapter
+        spinner2.adapter = spinnerAdapter
 
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                idEvent = spinner.selectedItem.toString()
+                idEvent = spinner2.selectedItem.toString()
                 if(idEvent == "English Premier League"){
                     idLeague = "4328"
                 }

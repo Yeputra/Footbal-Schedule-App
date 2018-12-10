@@ -29,8 +29,11 @@ class MainActivityTest{
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         onView(ViewMatchers.withText("Football Schedule App"))
 
-        onView(withId(appbar))
-            .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+        onView(withId(spinner2))
+            .check(matches(isDisplayed()))
+        onView(withId(spinner2)).perform(click())
+        onView(withText("Spanish La Liga")).perform(click())
+        delay()
 
     }
 

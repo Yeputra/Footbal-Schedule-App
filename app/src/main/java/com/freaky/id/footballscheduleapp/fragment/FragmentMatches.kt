@@ -9,12 +9,8 @@ import android.support.v4.view.ViewPager
 import android.support.v7.widget.SearchView
 import android.view.*
 import android.widget.EditText
-import android.widget.ImageView
-
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.activity.SearchMatchActivity
-import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.support.v4.startActivity
 
 class FragmentMatches : Fragment() {
 
@@ -92,21 +88,5 @@ class FragmentMatches : Fragment() {
 
 
     }
-/*
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                true
-            }
-            R.id.searchMenu -> {
-                val intent = Intent(context, SearchMatchActivity::class.java)
-                startActivity(intent)
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
-        }
-
-    }*/
 
 }

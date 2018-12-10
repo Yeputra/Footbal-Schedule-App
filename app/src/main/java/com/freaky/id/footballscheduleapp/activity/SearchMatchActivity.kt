@@ -94,6 +94,8 @@ class SearchMatchActivity : AppCompatActivity(), SearchMatchView {
     private fun initToolbar() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Search Match"
         val color = resources.getColor(R.color.colorCard)
         toolbar.setTitleTextColor(color)
