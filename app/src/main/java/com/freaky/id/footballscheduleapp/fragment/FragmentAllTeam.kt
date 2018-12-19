@@ -76,10 +76,14 @@ class FragmentAllTeam  : Fragment(), TeamView {
 
     override fun showLoading() {
         progressBar.visibility = View.VISIBLE
+        swipeRefresh.visibility = View.GONE
+        spinner.visibility = View.GONE
     }
 
     override fun hideLoading() {
         progressBar.visibility = View.GONE
+        swipeRefresh.visibility = View.VISIBLE
+        spinner.visibility = View.VISIBLE
     }
 
     override fun showTeamList(data: List<TeamList>) {

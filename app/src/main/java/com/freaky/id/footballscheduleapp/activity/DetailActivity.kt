@@ -170,7 +170,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar!!.title = "Event detail"
+        supportActionBar!!.title = "Match detail"
         val color = resources.getColor(R.color.colorCard)
         toolbar.setTitleTextColor(color)
     }

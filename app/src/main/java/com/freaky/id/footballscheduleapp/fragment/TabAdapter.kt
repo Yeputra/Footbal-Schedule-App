@@ -16,7 +16,7 @@ class TabAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getPageTitle(position: Int): CharSequence = when (position) {
         0 -> "Last Match"
         1 -> "Next Match"
-        2 -> "Favorite"
+        2 -> "Favorite Match"
         else -> ""
     }
 
