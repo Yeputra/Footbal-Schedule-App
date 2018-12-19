@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.adapter.FavoriteTeamsAdapter
@@ -21,6 +22,8 @@ class FragmentFavoriteTeam : Fragment() {
 
         private var favorites: MutableList<FavoriteTeams> = mutableListOf()
         private lateinit var adapterFavorite: FavoriteTeamsAdapter
+        private lateinit var noData: TextView
+        private lateinit var recyclerFavorite: RecyclerView
         fun newInstance(): FragmentFavoriteTeam =
             FragmentFavoriteTeam()
 
@@ -28,7 +31,9 @@ class FragmentFavoriteTeam : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_favorite_team, container, false)
-        var recyclerFavorite = rootView.findViewById(R.id.rv_favorite_team) as RecyclerView
+        recyclerFavorite = rootView.findViewById(R.id.rv_favorite_team)
+        noData = rootView.findViewById(R.id.txtNoData)
+        noData.visibility = View.GONE
         recyclerFavorite.layoutManager = LinearLayoutManager(activity)
         adapterFavorite = FavoriteTeamsAdapter(this!!.context!!, favorites)
         recyclerFavorite.adapter = adapterFavorite
@@ -44,6 +49,10 @@ class FragmentFavoriteTeam : Fragment() {
             val favorite = result.parseList(classParser<FavoriteTeams>())
             favorites.addAll(favorite)
             adapterFavorite.notifyDataSetChanged()
+        }
+        if (favorites.isEmpty()) {
+            recyclerFavorite.visibility = View.GONE
+            noData.visibility = View.VISIBLE
         }
     }
 

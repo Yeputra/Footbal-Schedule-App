@@ -26,6 +26,7 @@ class FragmentLast : Fragment(), LastView {
         private var events: MutableList<EventsItem> = mutableListOf()
         private lateinit var presenter: LastPresenter
         private lateinit var adapterEventLast: EventAdapterLast
+        private lateinit var matchLast: RecyclerView
         private lateinit var idEvent : String
         private lateinit var idLeague : String
 
@@ -36,10 +37,10 @@ class FragmentLast : Fragment(), LastView {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        var match_recycler_last = find(R.id.match_recycler_last) as RecyclerView
-        match_recycler_last.layoutManager = LinearLayoutManager(activity)
+        matchLast = find(R.id.match_recycler_last) as RecyclerView
+        matchLast.layoutManager = LinearLayoutManager(activity)
         adapterEventLast = EventAdapterLast(this!!.context!!, events)
-        match_recycler_last.adapter = adapterEventLast
+        matchLast.adapter = adapterEventLast
 
         val request = ApiRepository()
         val gson = Gson()
@@ -97,10 +98,14 @@ class FragmentLast : Fragment(), LastView {
 
     override fun showLoading() {
         progressBar.visibility = View.VISIBLE
+        swipe.visibility = View.GONE
+        spinner2.visibility = View.GONE
     }
 
     override fun hideLoading() {
         progressBar.visibility = View.GONE
+        swipe.visibility = View.VISIBLE
+        spinner2.visibility = View.VISIBLE
     }
 
     override fun showEventList(data: List<EventsItem>) {

@@ -19,6 +19,7 @@ import com.freaky.id.footballscheduleapp.R
 import com.freaky.id.footballscheduleapp.adapter.EventAdapterNext
 import com.freaky.id.footballscheduleapp.model.EventsItem
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.fragment_next.*
 import org.jetbrains.anko.support.v4.onRefresh
 
 class FragmentNext : Fragment(), NextView {
@@ -29,8 +30,8 @@ class FragmentNext : Fragment(), NextView {
         private lateinit var adapterEvent: EventAdapterNext
         private lateinit var idEvent : String
         private lateinit var idLeague : String
-        private lateinit var spinner: Spinner
-        private lateinit var progressBar : ProgressBar
+        private lateinit var spinner1: Spinner
+        private lateinit var progressBar1 : ProgressBar
         private lateinit var swipeRefresh: SwipeRefreshLayout
 
         fun newInstance(): FragmentNext =
@@ -44,8 +45,8 @@ class FragmentNext : Fragment(), NextView {
         match_recycler_next.layoutManager = LinearLayoutManager(context)
         adapterEvent = EventAdapterNext(this!!.context!!, events)
         match_recycler_next.adapter = adapterEvent
-        spinner = rootView.findViewById(R.id.spinner) as Spinner
-        progressBar = rootView.findViewById(R.id.progressBar) as ProgressBar
+        spinner1 = rootView.findViewById(R.id.spinner) as Spinner
+        progressBar1 = rootView.findViewById(R.id.progressBar) as ProgressBar
         swipeRefresh = rootView.findViewById(R.id.swipe) as SwipeRefreshLayout
 
         val request = ApiRepository()
@@ -54,9 +55,9 @@ class FragmentNext : Fragment(), NextView {
 
         val spinnerItems = resources.getStringArray(R.array.league)
         val spinnerAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, spinnerItems)
-        spinner.adapter = spinnerAdapter
+        spinner1.adapter = spinnerAdapter
 
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 idEvent = spinner.selectedItem.toString()
@@ -97,11 +98,15 @@ class FragmentNext : Fragment(), NextView {
     }
 
     override fun showLoading() {
-        progressBar.visibility = View.VISIBLE
+        progressBar1.visibility = View.VISIBLE
+        swipe.visibility = View.GONE
+        spinner1.visibility = View.GONE
     }
 
     override fun hideLoading() {
-        progressBar.visibility = View.GONE
+        progressBar1.visibility = View.GONE
+        swipe.visibility = View.VISIBLE
+        spinner1.visibility = View.VISIBLE
     }
 
     override fun showEventList(data: List<EventsItem>) {

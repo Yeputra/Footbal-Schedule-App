@@ -15,4 +15,13 @@
 
     </android.support.v7.widget.RecyclerView>
 
+    <TextView
+            android:id="@+id/txtNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oops, there is no data yet!"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
 </android.support.design.widget.CoordinatorLayout>
