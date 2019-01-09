@@ -154,10 +154,23 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         tvdate.text = data.dateEvent?.let { DateHelper.formatDateToMatch(it) }
         tvHomeScore.text = data.intHomeScore
         tvAwayScore.text = data.intAwayScore
-        tvHomeGoals.text = data.strHomeGoalDetail
-        tvAwayGoals.text = data.strAwayGoalDetail
-        tvHomeShots.text = data.intHomeShots
-        tvAwayShots.text = data.intAwayShots
+        if (data.strHomeGoalDetail != null){
+            tvHomeGoals.text = data.strHomeGoalDetail
+            tvAwayGoals.text = data.strAwayGoalDetail
+        }
+        else {
+            tvHomeGoals.text = "-"
+            tvAwayGoals.text = "-"
+        }
+        if (data.intHomeScore != null){
+            tvHomeShots.text = data.intHomeShots
+            tvAwayShots.text = data.intAwayShots
+        }
+        else{
+            tvHomeShots.text = "-"
+            tvAwayShots.text = "-"
+        }
+
     }
 
     override fun showDetailTeam(data: TeamList, isHomeTeam : Boolean){
@@ -171,7 +184,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Match detail"
-        val color = resources.getColor(R.color.colorCard)
+        val color = resources.getColor(R.color.white)
         toolbar.setTitleTextColor(color)
     }
 

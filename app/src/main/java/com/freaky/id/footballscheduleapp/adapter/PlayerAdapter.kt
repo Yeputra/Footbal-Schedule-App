@@ -36,7 +36,10 @@ class PlayerAdapter (private val context: Context, private val player: List<Play
 
         fun bindItem(player: PlayerItem) {
             tvPlayer.text = player.strPlayer
-            Picasso.get().load(player.strCutout).into(ivPlayer)
+            Picasso.get()
+                .load(player.strCutout)
+                .placeholder(R.drawable.player)
+                .into(ivPlayer)
         }
 
     }

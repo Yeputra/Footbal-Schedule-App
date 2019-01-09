@@ -8,7 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorHint">@color/colorCard</item>
         <item name="android:editTextColor">@color/colorCard</item>
-        <item name="android:windowLightStatusBar">true</item>
 
     </style>
 

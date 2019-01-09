@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
 import android.support.v7.widget.Toolbar
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import com.freaky.id.footballscheduleapp.API.ApiRepository
@@ -77,6 +78,17 @@ class SearchMatchActivity : AppCompatActivity(), SearchMatchView {
                 return true
     }
 
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.getItemId()) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun showLoading() {
         progress_3.visibility = View.VISIBLE
     }
@@ -97,7 +109,7 @@ class SearchMatchActivity : AppCompatActivity(), SearchMatchView {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Search Match"
-        val color = resources.getColor(R.color.colorCard)
+        val color = resources.getColor(R.color.white)
         toolbar.setTitleTextColor(color)
     }
 

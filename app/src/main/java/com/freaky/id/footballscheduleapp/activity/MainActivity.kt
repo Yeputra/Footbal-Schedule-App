@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "Football Schedule App"
-        val color = resources.getColor(R.color.colorCard)
+        val color = resources.getColor(R.color.white)
         toolbar.setTitleTextColor(color)
     }
 }

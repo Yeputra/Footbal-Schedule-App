@@ -35,9 +35,9 @@ class FragmentMatches : Fragment() {
 
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
-        tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#447ef3"))
+        tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#FFFFFFFF"))
         tabLayout.setSelectedTabIndicatorHeight(((5 * getResources().getDisplayMetrics().density).toInt()))
-        tabLayout.setTabTextColors(Color.parseColor("#727272"), Color.parseColor("#447ef3"))
+        tabLayout.setTabTextColors(Color.parseColor("#d1cfcf"), Color.parseColor("#FFFFFFFF"))
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {

@@ -146,7 +146,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = "Team Detail"
-        val color = resources.getColor(R.color.colorCard)
+        val color = resources.getColor(R.color.white)
         toolbar.setTitleTextColor(color)
     }
 
