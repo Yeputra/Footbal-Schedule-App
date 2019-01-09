@@ -64,11 +64,11 @@ class FragmentMatches : Fragment() {
 
 
 
-        searchView?.queryHint = "Search matches"
+        searchView?.queryHint = "Search matches here..."
 
         val hint = searchView?.findViewById<EditText>(android.support.v7.appcompat.R.id.search_src_text)
         if (hint != null) {
-            hint.setHintTextColor(Color.GRAY)
+            hint.setHintTextColor(Color.WHITE)
         }
 
 

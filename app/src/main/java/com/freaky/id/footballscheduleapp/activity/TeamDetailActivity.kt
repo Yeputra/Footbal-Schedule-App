@@ -1,6 +1,7 @@
 package com.freaky.id.footballscheduleapp.activity
 
 import android.database.sqlite.SQLiteConstraintException
+import android.graphics.PorterDuff
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
@@ -38,7 +39,10 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
     private lateinit var scrollView: ScrollView
     private lateinit var teamID: String
     private lateinit var ivTeam: ImageView
+    private lateinit var ivPoster: ImageView
     private lateinit var tvTeam: TextView
+    private lateinit var tvAlt: TextView
+    private lateinit var tvYear: TextView
     private lateinit var tvDes: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var cvTeam: CardView
@@ -66,6 +70,9 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
         scrollView = find(main_container)
 
         ivTeam = find(iv_team)
+        ivPoster = find(iv_fanart)
+        tvAlt = find(tv_alt)
+        tvYear = find(tv_year)
         tvTeam = find(tv_team)
         tvDes = find(tv_des)
         progressBar = find(progressBar2)
@@ -126,11 +133,22 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
 
         teams = TeamList(data.teamId,
                         data.teamName,
-                        data.teamBadge)
+                        data.teamBadge,
+                        data.fanart,
+                        data.alt,
+                        data.year)
 
         tvTeam.text = data.teamName
-        Picasso.get().load(data.teamBadge).into(ivTeam)
+        Picasso.get()
+            .load(data.teamBadge)
+            .into(ivTeam)
         tvDes.text = data.teamDes
+        Picasso.get()
+            .load(data.fanart)
+            .fit()
+            .into(ivPoster)
+        tvAlt.text = data.alt
+        tvYear.text = "Since "+ data.year
 
     }
 
@@ -145,6 +163,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        toolbar.getNavigationIcon()?.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         supportActionBar!!.title = "Team Detail"
         val color = resources.getColor(R.color.white)
         toolbar.setTitleTextColor(color)
@@ -179,9 +198,9 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
 
     private fun setFavorite() {
         if (isFavorite)
-            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, R.drawable.ic_added_to_favorite)
+            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, R.drawable.ic_star_black_24dp)
         else
-            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, R.drawable.ic_add_to_favorite)
+            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, R.drawable.ic_star_border_black_24dp)
     }
 
     private fun favoriteState(){

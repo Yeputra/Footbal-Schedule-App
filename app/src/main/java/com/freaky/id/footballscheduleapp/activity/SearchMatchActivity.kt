@@ -1,6 +1,7 @@
 package com.freaky.id.footballscheduleapp.activity
 
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -108,6 +109,7 @@ class SearchMatchActivity : AppCompatActivity(), SearchMatchView {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        toolbar.getNavigationIcon()?.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         supportActionBar!!.title = "Search Match"
         val color = resources.getColor(R.color.white)
         toolbar.setTitleTextColor(color)

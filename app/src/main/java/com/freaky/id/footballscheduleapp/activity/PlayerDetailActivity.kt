@@ -1,5 +1,6 @@
 package com.freaky.id.footballscheduleapp.activity
 
+import android.graphics.PorterDuff
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.CardView
@@ -26,6 +27,7 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerView {
     private lateinit var playerID: String
     private lateinit var playerName: String
     private lateinit var ivProfile: ImageView
+    private lateinit var cvProfile: CardView
     private lateinit var ivPoster: ImageView
     private lateinit var tvDes: TextView
     private lateinit var progressBar: ProgressBar
@@ -35,7 +37,7 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerView {
         setContentView(R.layout.activity_player_detail)
 
         playerID = intent.getStringExtra("player")
-        ivProfile = findViewById(R.id.iv_poster)
+        cvProfile = findViewById(R.id.cv_profile)
         ivPoster = findViewById(R.id.iv_poster)
         tvDes = findViewById(R.id.tv_player_des)
         progressBar = findViewById(R.id.progressBar)
@@ -49,13 +51,13 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerView {
     override fun showLoading() {
         ivPoster.visibility = View.GONE
         progressBar.visibility = View.VISIBLE
-        ivProfile.visibility = View.GONE
+        cvProfile.visibility = View.GONE
     }
 
     override fun hideLoading() {
         ivPoster.visibility = View.VISIBLE
         progressBar.visibility = View.GONE
-        ivProfile.visibility = View.VISIBLE
+        cvProfile.visibility = View.VISIBLE
     }
 
     override fun showDetailPlayer(data: PlayersDetailItem) {
@@ -86,6 +88,7 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerView {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        toolbar.getNavigationIcon()?.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         supportActionBar!!.title = playerName
        val color = resources.getColor(R.color.white)
         toolbar.setTitleTextColor(color)

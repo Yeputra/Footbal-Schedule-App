@@ -13,5 +13,15 @@ data class TeamList (
     var teamBadge: String? = null,
 
     @SerializedName("strDescriptionEN")
-    var teamDes: String? = null
+    var teamDes: String? = null,
+
+    @SerializedName("strTeamFanart1")
+    var fanart: String? = null,
+
+    @SerializedName("strAlternate")
+    var alt: String? = null,
+
+    @SerializedName("intFormedYear")
+    var year: String? = null
+
 )

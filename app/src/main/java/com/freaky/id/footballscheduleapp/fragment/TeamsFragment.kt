@@ -64,11 +64,11 @@ class TeamsFragment : Fragment() {
 
 
 
-        searchView?.queryHint = "Search teams"
+        searchView?.queryHint = "Search teams here..."
 
         val hint = searchView?.findViewById<EditText>(android.support.v7.appcompat.R.id.search_src_text)
         if (hint != null) {
-            hint.setHintTextColor(Color.GRAY)
+            hint.setHintTextColor(Color.WHITE)
         }
 
 

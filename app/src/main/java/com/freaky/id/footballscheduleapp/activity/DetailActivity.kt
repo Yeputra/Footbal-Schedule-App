@@ -1,6 +1,7 @@
 package com.freaky.id.footballscheduleapp.activity
 
 import android.database.sqlite.SQLiteConstraintException
+import android.graphics.PorterDuff
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.CoordinatorLayout
@@ -17,8 +18,7 @@ import com.freaky.id.footballscheduleapp.API.ApiRepository
 import com.freaky.id.footballscheduleapp.MatchDetailPresenter
 import com.freaky.id.footballscheduleapp.MatchDetailView
 import com.freaky.id.footballscheduleapp.R
-import com.freaky.id.footballscheduleapp.R.drawable.ic_add_to_favorite
-import com.freaky.id.footballscheduleapp.R.drawable.ic_added_to_favorite
+import com.freaky.id.footballscheduleapp.R.drawable.*
 import com.freaky.id.footballscheduleapp.R.id.add_to_favorite
 import com.freaky.id.footballscheduleapp.R.menu.detail_menu
 import com.freaky.id.footballscheduleapp.db.Favorite
@@ -183,6 +183,7 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        toolbar.getNavigationIcon()?.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         supportActionBar!!.title = "Match detail"
         val color = resources.getColor(R.color.white)
         toolbar.setTitleTextColor(color)
@@ -221,9 +222,9 @@ class DetailActivity : AppCompatActivity(), MatchDetailView {
 
     private fun setFavorite() {
         if (isFavorite)
-            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, ic_added_to_favorite)
+            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, ic_star_black_24dp)
         else
-            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, ic_add_to_favorite)
+            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, ic_star_border_black_24dp)
     }
 
     private fun favoriteState(){
