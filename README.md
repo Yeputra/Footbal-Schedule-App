@@ -28,5 +28,11 @@ This repository is my final project for the Dicoding class : Kotlin Android Deve
 * Unit Test
 * Instrumentation Test
 
+**5. Tech Stack**
+* Kotlin
+* MVP Pattern 
+* Anko
+* Picasso
+
 ## Author
 **Yuda Eka Putra**
