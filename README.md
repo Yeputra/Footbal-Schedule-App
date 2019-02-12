@@ -35,4 +35,4 @@ This repository is my final project for the Dicoding class : Kotlin Android Deve
 * Picasso
 
 ## Author
-**Yuda Eka Putra**
+* **Yuda Eka Putra**
