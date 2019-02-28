@@ -18,7 +18,7 @@ This repository is my final project for the Dicoding class : Kotlin Android Deve
 * Team detail
 * Search team
 * Player list
-* PLayer detail
+* Player detail
 
 **3. Favorite team & match**
 * Save and delete favorite match to Database
