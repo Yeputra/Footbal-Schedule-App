@@ -30,6 +30,7 @@ This repository is my final project for the Dicoding class : Kotlin Android Deve
 
 **5. Tech Stack**
 * Kotlin
+* Coroutines
 * MVP Pattern 
 * Anko
 * Picasso
