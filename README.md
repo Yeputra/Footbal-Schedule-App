@@ -32,6 +32,7 @@ This repository is my final project for the Dicoding class : Kotlin Android Deve
 * Kotlin
 * Coroutines
 * MVP Pattern 
+* Swipe to refresh Layout
 * Anko
 * Picasso
 
