@@ -1,13 +1,11 @@
 package com.freaky.id.footballscheduleapp.activity
 
-import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
-import android.view.View
 import com.freaky.id.footballscheduleapp.R
-import com.freaky.id.footballscheduleapp.fragment.FragmentMatches
-import com.freaky.id.footballscheduleapp.fragment.TeamsFragment
+import com.freaky.id.footballscheduleapp.Fragment.FragmentMatches
+import com.freaky.id.footballscheduleapp.Fragment.TeamsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

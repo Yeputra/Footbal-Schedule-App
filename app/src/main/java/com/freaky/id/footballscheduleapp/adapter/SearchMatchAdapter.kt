@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
-import com.freaky.id.footballscheduleapp.activity.DetailActivity
+import com.freaky.id.footballscheduleapp.DetailMatch.DetailActivity
 import com.freaky.id.footballscheduleapp.model.EventItem
 import com.freaky.id.footballscheduleapp.utils.DateHelper
 import org.jetbrains.anko.startActivity

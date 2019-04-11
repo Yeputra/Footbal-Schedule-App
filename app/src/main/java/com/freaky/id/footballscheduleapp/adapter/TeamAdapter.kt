@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.freaky.id.footballscheduleapp.R
-import com.freaky.id.footballscheduleapp.activity.TeamDetailActivity
+import com.freaky.id.footballscheduleapp.TeamDetail.TeamDetailActivity
 import com.freaky.id.footballscheduleapp.model.TeamList
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.startActivity

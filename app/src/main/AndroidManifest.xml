@@ -22,15 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.DetailActivity">
+        <activity android:name=".DetailMatch.DetailActivity">
         </activity>
-        <activity android:name=".activity.TeamDetailActivity">
+        <activity android:name=".TeamDetail.TeamDetailActivity">
         </activity>
-        <activity android:name=".activity.PlayerDetailActivity">
+        <activity android:name=".Player.PlayerDetailActivity">
         </activity>
-        <activity android:name=".activity.SearchMatchActivity">
+        <activity android:name=".SearchMatch.SearchMatchActivity">
         </activity>
-        <activity android:name=".activity.SearchTeamActivity">
+        <activity android:name=".SearchTeam.SearchTeamActivity">
         </activity>
     </application>
 
